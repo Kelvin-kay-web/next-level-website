@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Next Level Media</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">NLM</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="design.html">Design</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type to search">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="form">
+                <h2>Contact Us</h2>
+                <form onsubmit="sendToWhatsApp(event)" method="post">
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="text" name="email" placeholder="Enter your email address" required>
+                    <input type="text" name="phone" placeholder="Enter your phone number" required>
+                    <input type="text" name="design_type" placeholder="Type of design needed" required>
+                    <input type="text" name="project_details" placeholder="Project details" required>
+                    <input type="text" name="deadline" placeholder="Deadline" required>
+                    <input type="submit" class="btnn" value="Submit">
+                </form>
+
+                <p>For inquiries, please contact us at <a href="mailto:nextlevelmediano1@gmail.com">nextlevelmediano1@gmail.com</a></p>
+                <p class="liw">Explore more of our designs on</p>
+
+                <div class="icon">
+                    <a href="#" title="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#" title="TikTok"><ion-icon name="logo-tiktok"></ion-icon></a>
+                    <a href="#" title="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+                    <a href="#" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+                </div>
+            </div>
+            <div class="testimonial">
+                <h1>Testimonial</h1>
+                <p>We take pride in the relationships we build with our clients and the satisfaction they get from our work.<br> Every project we complete is an opportunity to deliver excellence and create something meaningful.<br>
+
+Our clients appreciate our attention to detail, creativity, and ability to turn their ideas into visually appealing designs.<br> Their feedback motivates us to keep improving and continue delivering high-quality results.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            const form = event.target;
+            const name = form.name.value;
+            const email = form.email.value;
+            const phone = form.phone.value;
+            const designType = form.design_type.value;
+            const projectDetails = form.project_details.value;
+            const deadline = form.deadline.value;
+            const message = `New Contact Form Submission:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nDesign Type: ${designType}\nProject Details: ${projectDetails}\nDeadline: ${deadline}`;
+            const whatsappURL = `https://wa.me/233500502823?text=${encodeURIComponent(message)}`;
+            window.location.href = whatsappURL;
+        }
+    </script>
+</body>
+</html>
